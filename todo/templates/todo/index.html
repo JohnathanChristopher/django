@@ -1,0 +1,22 @@
+{% extends 'todo/base.html' %}
+
+{% block content %}
+<h1>My To-Do List</h1>
+
+<form method="POST">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Add Task</button>
+</form>
+
+<hr>
+
+{% for task in tasks %}
+    <div class="task {% if task.completed %}completed{% endif %}">
+        {{ task.title }} 
+        <a href="{% url 'delete_task' task.id %}" style="color:red; float:right;">✖</a>
+    </div>
+{% empty %}
+    <p>No tasks yet!</p>
+{% endfor %}
+{% endblock %}
