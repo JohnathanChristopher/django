@@ -31,7 +31,7 @@ DEBUG = False
 if not DEBUG:
     STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
-ALLOWED_HOSTS = ['my-todo-app-w24i.onrender.com']
+ALLOWED_HOSTS = ['todo-9g9q.onrender.com']
 
 
 # Application definition
